@@ -31,6 +31,12 @@ module.exports = {
       },
     ],
   },
+  'prettier/prettier': [
+    'error',
+    {
+      endOfLine: 'auto',
+    },
+  ],
   overrides: [
     {
       files: ['tests/**/*.ts'],
