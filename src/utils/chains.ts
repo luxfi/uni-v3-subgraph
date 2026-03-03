@@ -1,7 +1,7 @@
 import { Address, BigDecimal, BigInt, dataSource } from '@graphprotocol/graph-ts'
 
 import { OPTIMISM_POOL_MAPPINGS } from '../backfill/poolMappings'
-import { StaticTokenDefinition } from './staticTokenDefinition'
+import { STATIC_TOKEN_DEFINITIONS, StaticTokenDefinition } from './staticTokenDefinition'
 
 export enum ChainId {
   ARBITRUM_ONE = 42161,
@@ -242,13 +242,25 @@ export function getSubgraphConfig(): SubgraphConfig {
       minimumNativeLocked: BigDecimal.fromString('4'),
       stablecoinAddresses: [
         '0x848cff46eb323f323b6bbe1df274e40793d7f2c2', // LUSD
+        '0xdf1de693c31e2a5eb869c329529623556b20abf3', // USDT
+        '0x8031e9b0d02a792cfefaa2bdca6e1289d385426f', // USDC
       ],
       whitelistTokens: [
         '0x4888e4a2ee0f03051c72d2bd3acf755ed3498b3e', // WLUX
         '0x848cff46eb323f323b6bbe1df274e40793d7f2c2', // LUSD
-        '0x60e0a8167fc13de89348978860466c9cec24b9ba', // lETH
+        '0x60e0a8167fc13de89348978860466c9cec24b9ba', // LETH
+        '0x1e48d32a4f5e9f08db9ae4959163300faf8a6c8e', // LBTC
+        '0x26b40f650156c7ebf9e087dd0dca181fe87625b7', // LSOL
+        '0x3141b94b89691009b950c96e97bff48e0c543e3c', // LTON
+        '0x0e4bd0dd67c15decfbbbdbbe07fc9d51d737693d', // LAVAX
+        '0x5e5290f350352768bd2bfc59c2da15dd04a7cb88', // LZOO
+        '0xdf1de693c31e2a5eb869c329529623556b20abf3', // USDT
+        '0x8031e9b0d02a792cfefaa2bdca6e1289d385426f', // USDC
+        '0x6edcf3645def09db45050638c41157d8b9fea1cf', // LBNB
+        '0x28bfc5dd4b7e15659e41190983e5fe3df1132bb9', // LPOL
+        '0x94f49d0f4c62bbe4238f4aaa9200287bea9f2976', // LBLAST
       ],
-      tokenOverrides: [],
+      tokenOverrides: STATIC_TOKEN_DEFINITIONS,
       poolsToSkip: [],
       poolMappings: [],
     }

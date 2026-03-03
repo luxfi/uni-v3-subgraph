@@ -63,13 +63,11 @@ export function fetchTokenName(tokenAddress: Address, tokenOverrides: StaticToke
 }
 
 export function fetchTokenTotalSupply(tokenAddress: Address): BigInt {
-  const contract = ERC20.bind(tokenAddress)
-  let totalSupplyValue = BigInt.zero()
-  const totalSupplyResult = contract.try_totalSupply()
-  if (!totalSupplyResult.reverted) {
-    totalSupplyValue = totalSupplyResult.value
-  }
-  return totalSupplyValue
+  // On non-archive nodes, eth_call at historic blocks fails with "missing trie node".
+  // try_totalSupply() only catches EVM reverts, not RPC-level errors, which causes
+  // the handler to abort. Since totalSupply is cosmetic (not used for pricing),
+  // skip the RPC call entirely. It will be populated on future events at current blocks.
+  return BigInt.zero()
 }
 
 export function fetchTokenDecimals(tokenAddress: Address, tokenOverrides: StaticTokenDefinition[]): BigInt | null {
