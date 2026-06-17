@@ -1,4 +1,4 @@
-# LLM.md - Hanzo Uni V3 Subgraph
+# Hanzo Uni V3 Subgraph
 
 ## Overview
 Synced at: https://graph.lux.network/subgraphs/name/lux/uniswap-v3?selected=playground
