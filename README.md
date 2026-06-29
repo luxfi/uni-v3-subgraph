@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="uni-v3-subgraph" width="880"></p>
+
 # Uniswap V3 Subgraph
 
 ### Subgraph Endpoint
